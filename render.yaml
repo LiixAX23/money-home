@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: meu-site
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    region: oregon
+    branch: main
+    buildCommand: ""
+    startCommand: ""
