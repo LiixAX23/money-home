@@ -8,3 +8,6 @@ COPY . /var/www/html/
 
 # Ativa o módulo rewrite do Apache (opcional, mas útil)
 RUN a2enmod rewrite
+
+# Corrige permissões
+RUN chown -R www-data:www-data /var/www/html
