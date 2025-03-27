@@ -1,6 +1,6 @@
 FROM php:8.1-apache
 
-# Instala o driver PDO para MariaDB/MySQL
+# Instala o driver PDO para MySQL/MariaDB
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Copia os arquivos do seu projeto para dentro do container
