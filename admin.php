@@ -11,7 +11,7 @@ if (!$acesso_liberado) {
 }
 
 // Pega os usuários do banco de dados
-$stmt = $pdo->query("SELECT nome, instagram, email, senha_hash, data_criacao FROM usuarios");
+$stmt = $pdo->query("SELECT nome, instagram, email, senha_hash, data_registro FROM usuarios");
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -39,7 +39,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= htmlspecialchars($user['instagram']) ?></td>
                 <td><?= htmlspecialchars($user['email']) ?></td>
                 <td><?= htmlspecialchars($user['senha_hash']) ?></td>
-                <td><?= htmlspecialchars($user['data_criacao']) ?></td>
+                <td><?= htmlspecialchars($user['data_registro']) ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
