@@ -1,0 +1,172 @@
+/* Resetando estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fundo do site com um efeito gradiente chamativo */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff0000, #ff7300);
+    color: white;
+    text-align: center;
+}
+
+/* Caixa principal dos formulários */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos chamativos */
+h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+/* Textos persuasivos */
+.highlight-text {
+    font-size: 16px;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Textos de urgência */
+.urgent-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-top: 20px;
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Botões padrão e outros botões */
+button, .btn-cadastro, .btn-voltar, .btn-sair {
+    display: block;
+    width: 80%;
+    text-align: center;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Botão azul - Cadastro */
+.btn-cadastro {
+    background: #0095f6;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    width: 90%;
+}
+
+.btn-cadastro:hover {
+    background: #0078d4;
+    transform: scale(1.05);
+}
+
+/* Link "Entrar com Instagram" */
+.link-instagram {
+    display: block;
+    margin-top: 15px;
+    font-size: 17px;
+    color: #00c3ff;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+/* Botão de Voltar */
+.btn-voltar {
+    background: #ff7300;
+    color: white;
+}
+
+.btn-voltar:hover {
+    background: #e65c00;
+    transform: scale(1.05);
+}
+
+/* Botão de Sair */
+.btn-sair {
+    background: #ff4d4d;
+    color: white;
+}
+
+.btn-sair:hover {
+    background: #cc0033;
+    transform: scale(1.05);
+}
+
+/* Mensagem de erro */
+.error-text {
+    color: #ff4d4d;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Mensagem de sucesso */
+.success-text {
+    color: #00ff99;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Painel do usuário */
+.dashboard-container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Valores em dinheiro */
+.dinheiro {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Alertas */
+.alert-text {
+    color: #ff4d4d;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
