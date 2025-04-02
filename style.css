@@ -147,13 +147,21 @@ button, .btn-cadastro, .btn-voltar, .btn-sair {
 
 /* Painel do usuário */
 .dashboard-container {
-    width: 100%;
-    max-width: 500px;
-    background: rgba(0, 0, 0, 0.85);
+    max-width: 700px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #833ab4; #fd1d1d, #fcb045); /Cores do instagram */
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 20px;
+    color: white;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    animation: fadeln 1s ease-in-out;
+}
+
+/* Animação suave */
+@keyframes fadeln {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Valores em dinheiro */
